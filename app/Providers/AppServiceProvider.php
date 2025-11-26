@@ -19,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Register Post Observer for automatic image conversion
+        \App\Models\Post::observe(\App\Observers\PostObserver::class);
     }
 }
